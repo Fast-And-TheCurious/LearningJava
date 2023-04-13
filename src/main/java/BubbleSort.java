@@ -48,5 +48,24 @@ public class BubbleSort {
         }
         
     }
-    
+    //Word Sort Improved
+    public void sort(){
+        boolean swapped =true;
+        int n=size-1;
+        int i=0;
+        
+        while(swapped && n>=0){
+            
+            swapped=false;
+            for (int j = 0; j < n; j++) {
+                if(arr[j].compareTo(arr[j+1])>0){
+                     String temp = arr[j]; 
+                    arr[j] = arr[j + 1]; 
+                    arr[j + 1] = temp;
+                    swapped = true;
+                }
+            }
+            n--;
+        }
+    }
 }
