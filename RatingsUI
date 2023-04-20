@@ -1,0 +1,18 @@
+
+package Arrays;
+
+public class RatingsUI {
+    public static void main(String[] args) {
+        Ratings ar= new Ratings();
+        // ar.add(1);
+        // ar.sort();
+         ar.delete(7);
+        
+        System.out.println(ar.toString());
+       // search(4);  
+        //System.out.println("NUMBER SYMMARY\n------------------");
+       // System.out.println("LOWEST= ");
+       // System.out.println("HIGHEST= ");
+        //System.out.println("AVERAGE= ");
+    }
+}
