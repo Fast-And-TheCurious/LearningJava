@@ -26,13 +26,12 @@ public class BubbleSort {
             }
         }
         //improved number search
-          public void sort() {
+    public void sort() {
         boolean swapped = true;
-        int i = 0;
         int n = size - 1;
         while (swapped) {
             swapped = false;
-            i++;
+            
             for (int j = 0; j < n; j++) {
                 if (arr[j] > arr[j + 1]) {
                     int temp = arr[j];
