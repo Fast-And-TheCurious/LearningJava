@@ -69,8 +69,7 @@ public class BubbleSort {
     //Word Sort Improved
     public void sort(){
         boolean swapped =true;
-        int n=size-1;
-        int i=0;
+        int n=size-1;        
         
         while(swapped && n>=0){
             
