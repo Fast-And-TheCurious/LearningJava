@@ -7,7 +7,7 @@ public class BubbleSort {
         bubbleSortImproved(arr);
         //improvedBubbleSort(arr);
     }
-
+    //number search
     public static void bubbleSortImproved(int[] arr) {
         boolean swapped = true; // Initialize swapped as true
         int n = arr.length; // Get length of array
@@ -25,6 +25,25 @@ public class BubbleSort {
                 }
             }
         }
+        //improved number search
+          public void sort() {
+        boolean swapped = true;
+        int i = 0;
+        int n = size - 1;
+        while (swapped) {
+            swapped = false;
+            i++;
+            for (int j = 0; j < n; j++) {
+                if (ratings[j] > ratings[j + 1]) {
+                    int temp = ratings[j];
+                    ratings[j] = ratings[j + 1];
+                    ratings[j + 1] = temp;
+                    swapped = true;
+                }
+            }
+            n--;
+        }
+    }
         for (int j = 0; j < n; j++) {
             System.out.println(arr[j]);
         }
