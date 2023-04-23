@@ -34,10 +34,10 @@ public class BubbleSort {
             swapped = false;
             i++;
             for (int j = 0; j < n; j++) {
-                if (ratings[j] > ratings[j + 1]) {
-                    int temp = ratings[j];
-                    ratings[j] = ratings[j + 1];
-                    ratings[j + 1] = temp;
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
                     swapped = true;
                 }
             }
