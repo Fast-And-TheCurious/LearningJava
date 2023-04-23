@@ -34,5 +34,28 @@ public class BinarySearch {
         }
         return -1;
     }
+    //words
+    public int binarySearchForWord(String[] wordsArray, String target) {
+        int left = 0;
+        int right = wordsArray.length - 1;
+
+        while (left <= right) {
+            int middle = (left + right) / 2;
+            int cmp = target.compareTo(wordsArray[middle]);
+
+            if (cmp == 0) {
+                return middle;
+            } else if (cmp < 0) {
+                right = middle - 1;
+            } else {
+                left = middle + 1;
+            }
+        }
+
+        return -1; // target not found in array
+    }
+}
+//int index = bs.binarySearchForWord(wordsArray, target);
+// System.out.println("Index of '" + target + "' in array: " + index);
 }
 
