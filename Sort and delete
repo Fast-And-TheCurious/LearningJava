@@ -1,0 +1,26 @@
+ public void add(int value) {
+
+        int index = size;
+
+        for (int i = 0; i < size; i++) {
+            if (ratings[i] > value) {
+                index = i;
+                break;
+            }
+            ratings[i] = ratings[i + 1];
+        }
+        ratings[index] = value;
+        size++;
+    }
+
+    public void delete(int value) {
+
+        int index = search(value);
+        if (index == -1) {
+            System.out.println("Value not found");
+        } else {
+            for (int i = size; i < index; i--) {                
+                ratings[i] = ratings[i - 1];
+            }
+        } 
+        
