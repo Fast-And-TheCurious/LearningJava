@@ -85,4 +85,33 @@ public class BubbleSort {
             n--;
         }
     }
+    public static void bubbleSortByName(String[] names, int[] ages, String[] colors) {
+    int n = names.length;
+    boolean swapped;
+    for (int i = 0; i < n - 1; i++) {
+        swapped = false;
+        for (int j = 0; j < n - i - 1; j++) {
+            if (names[j].compareTo(names[j + 1]) > 0) {
+                // Swap names
+                String tempName = names[j];
+                names[j] = names[j + 1];
+                names[j + 1] = tempName;
+                // Swap ages
+                int tempAge = ages[j];
+                ages[j] = ages[j + 1];
+                ages[j + 1] = tempAge;
+                // Swap colors
+                String tempColor = colors[j];
+                colors[j] = colors[j + 1];
+                colors[j + 1] = tempColor;
+                swapped = true;
+            }
+        }
+        if (!swapped) {
+            // Array already sorted, exit loop
+            break;
+        }
+    }
+}
+
 }
