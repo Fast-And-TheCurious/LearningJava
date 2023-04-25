@@ -1,0 +1,61 @@
+package Arrays;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class ITAf {
+
+    private String[] names;
+    private int[] ages;
+    private String[] colors;
+    private int size;
+
+    public ITAf() {
+        
+        names=new String[100];
+        ages= new int[100];
+        colors = new String[100];
+        
+        size=0;
+        File f = new File("names.txt");
+        try {
+            Scanner fileScan = new Scanner(f);
+            while (fileScan.hasNextLine()) {
+                String line = fileScan.nextLine();
+                Scanner lineSc= new Scanner(line).useDelimiter("#");
+                
+                String name = lineSc.next();
+                int age = lineSc.nextInt();
+                String color = lineSc.next();                              
+                               
+                names[size]= name;
+                ages[size]=age;
+                colors[size]=color;                
+                
+                size++;
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(ITAf.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void sort(){
+        for (int i = 0; i < size; i++) {
+            for (int j = i; j < size; j++) {
+                if(ages[i] > ages[j]){
+                    int tempAge = ages[i];
+                    ages[i] = ages[j];
+                    ages[j] = tempAge;
+                    
+                    String tempName = names[i];
+                    names[i] = names[j];
+                    names[j] = tempName; 
+                }                
+            }
+            
+        }
+    }
+}
