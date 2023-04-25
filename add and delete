@@ -1,26 +1,82 @@
- public void add(int value) {
+ public  void deleteStringFromArray(String element) {
+    // Find the index of the element to be deleted
+    int index = -1;
+    for (int i = 0; i < size; i++) {
+        if (names[i].equals(element)) {
+            index = i;
+            break;
+        }
+    }
 
-        int index = size;
+    // If the element was not found, return without modifying the array
+    if (index == -1) {
+        return;
+    }
 
+    // Move all the elements of the original array one position to the left
+    for (int i = index; i < size - 1; i++) {
+        names[i] = names[i + 1];
+    }
+
+    // Resize the original array by one
+    names = Arrays.copyOf(names, names.length - 1);
+}
+
+
+    
+
+    public void deleteIntFromArray(int element) {
+        // Find the index of the element to be deleted
+        int index = -1;
         for (int i = 0; i < size; i++) {
-            if (ratings[i] > value) {
+            if (ages[i] == element) {
                 index = i;
                 break;
             }
-            ratings[i] = ratings[i + 1];
         }
-        ratings[index] = value;
-        size++;
+
+        // If the element was not found, return without modifying the array
+        if (index == -1) {
+            return;
+        }
+
+        // Move all the elements of the original array one position to the left
+        for (int i = index; i < ages.length - 1; i++) {
+            ages[i] = ages[i + 1];
+        }
+
+        // Resize the original array by one
+        ages = Arrays.copyOf(ages, ages.length - 1);
     }
 
-    public void delete(int value) {
+    public void addStringToArray(String element) {
+        // Find the length of the original array
+        int n = size;
 
-        int index = search(value);
-        if (index == -1) {
-            System.out.println("Value not found");
-        } else {
-            for (int i = size; i < index; i--) {                
-                ratings[i] = ratings[i - 1];
-            }
-        } 
-        
+        // Resize the original array by one
+        names = Arrays.copyOf(names, n + 1);
+
+        // Move all the elements of the original array one position to the right
+        for (int i = n - 1; i >= 0; i--) {
+            names[i + 1] = names[i];
+        }
+
+        // Add the new element to the beginning of the array
+        names[0] = element;
+    }
+
+    public void addIntegerToArray(int element) {
+        // Find the length of the original array
+        int n = size;
+
+        // Resize the original array by one
+        ages = Arrays.copyOf(ages, n + 1);
+
+        // Move all the elements of the original array one position to the right
+        for (int i = n - 1; i >= 0; i--) {
+            ages[i + 1] = ages[i];
+        }
+
+        // Add the new element to the beginning of the array
+        ages[0] = element;
+    }
